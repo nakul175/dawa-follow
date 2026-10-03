@@ -1,0 +1,36 @@
+{
+  "id": "dawa-follow",
+  "name": "Dawa Follow",
+  "organisation": "Sehat Continuity Labs",
+  "color": "#3e5598",
+  "topic": "Medicine follow-up",
+  "description": "Read a printed medicine list and record barriers to the prescribed plan.",
+  "input": "document",
+  "model": "Tesseract LSTM OCR",
+  "modelRole": "Extract printed prescription text for worker confirmation; no prescribing, dose changes or adherence prediction.",
+  "source": "https://github.com/tesseract-ocr/tesseract",
+  "fields": [
+    [
+      "missed",
+      "Missed prescribed doses reported",
+      "boolean"
+    ],
+    [
+      "supply",
+      "Medicine unavailable or finished",
+      "boolean"
+    ],
+    [
+      "reaction",
+      "New concerning symptom or suspected medicine reaction",
+      "boolean"
+    ]
+  ],
+  "sample": {
+    "missed": true,
+    "supply": true,
+    "reaction": false
+  },
+  "note": "SYNTHETIC MEDICINE LIST\nPrescribed medicine: SAMPLE ONLY\nFollow-up with ANM. Do not change a dose.",
+  "guidance": "https://www.mohfw.gov.in/sites/default/files/NP-NCD%20Operational%20Guidelines.pdf"
+}
